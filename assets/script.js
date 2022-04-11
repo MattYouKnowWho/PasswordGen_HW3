@@ -15,13 +15,7 @@ const numbers = ['1','2','3','4','5','6','7','8','9','0'];
 
 function generatePassword () 
 {
-//prompting user for the length and keys desired for their password
-// characterLength = window.prompt("How keys between 8 and 128 characters would you like your password to be made up of?");
-// let specialChar = window.confirm("Click OK if you want to have special characters in your password. ");
-// let upperCase = window.confirm("Click OK if you want uppercase letters to be in your password. ");
-// let lowerCase = window.confirm("Click OK if you want lowercase letters to be in your password. ");
-// let number = window.confirm("Click OK if you want numbers to be in your password. ");
-//
+
 //parameters for user password length
 characterLength = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
 if (!characterLength){
@@ -34,6 +28,7 @@ specialChar = window.confirm("Click OK if you want to have special characters in
 upperCase = window.confirm("Click OK if you want uppercase letters to be in your password. ");
 lowerCase = window.confirm("Click OK if you want lowercase letters to be in your password. ");
 numbers = window.confirm("Click OK if you want numbers to be in your password. ");
+// scenarios in which user doesnt click OK
 if (!specialChar && !upperCase && !lowerCase && !numbers){
 
 } else if (specialChar && upperCase && lowerCase)
@@ -41,12 +36,13 @@ if (!specialChar && !upperCase && !lowerCase && !numbers){
 {} else if (specialChar)
 let thePassword =[];
 
+//loop to give random generated password 
 for (i = 0; i < chracterLength + 1; i++) {
     let randomCharIndex = choices[ Math.floor(Math.random() * possibleCharacters.length)]
     generatedPassword += possibleCharacters[randomCharIndex]  
     thePassword.push(randomCharIndex)
 }} 
-
+//function to button so what when clicked, it performs the generatePassword function
 generateBtn.addEventListener("click", function () {
   passwordVar = generatePassword();
   document.getElementById("passwordVar");
