@@ -7,7 +7,7 @@ const specialCharArr = [ "~", "!", "@", "#", "$", "%","^","&","*","(",")","-","_
 const upperCaseArr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 const lowerCaseArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','u','v','w','x','y','z'];
 const numbersArr = ['1','2','3','4','5','6','7','8','9','0'];
-const choices = []
+let choices = []
 
 
 
@@ -27,28 +27,28 @@ const numbers = window.confirm("Click OK if you want numbers to be in your passw
 //scenarios in which user doesnt click OK
 if (!specialChar && !upperCase && !lowerCase && !numbers){
 }
-  if (lowercase){
-      choices = choices.concat(lowerCase)
+  if (lowerCaseArr){
+      choices = choices.concat(lowerCaseArr)
     }
     
-      if (uppercase) {
-        choices = choices.concat(upperCase)
+      if (upperCaseArr) {
+        choices = choices.concat(upperCaseArr)
     }
     
-      if (specialCharacters) {
-        choices = choices.concat(specialChar)
+      if (specialCharArr) {
+        choices = choices.concat(specialCharArr)
     }
     
-      if (number) {
-        choices = choices.concat(numbers)
+      if (numbersArr) {
+        choices = choices.concat(numbersArr)
     }
     
 
 
 //loop to give random generated password 
 for (i = 0; i < characterLength + 1; i++) {
-    let randomCharIndex = choices[ Math.floor(Math.random() * choices.length)]
-    generatedPassword += choices[randomCharIndex]  
+    let randomChar = choices[ Math.floor(Math.random() * choices.length)];
+    generatedPassword += randomChar; 
   
 }
 return generatedPassword
@@ -56,6 +56,7 @@ return generatedPassword
 
 }
 
+//added event listener 
 generateBtn.addEventListener("click", function () {
   passwordVar = generatePassword();
   const passwordEl = document.getElementById("password");
