@@ -9,29 +9,6 @@ const number = ['1','2','3','4','5','6','7','8','9','0'];
 
 let thePassword = "";
 
-
-
-
-// Write password to the #password input
-// function writePassword() {
-//   let password = generatePassword();
-//   let passwordText = document.querySelector("#password");
-//   if (password === undefined) {
-
-//   }
-
-//   passwordText.value = password;
-
-//   setTimeout(function () {
-//     passwordText.value = "...Removing your generated password for safety...";
-//     setTimeout(function () {
-//       passwordText.value = "...Thank me later...";
-//       setTimeout(function () {
-//         passwordText.value = "...Removed...";
-//       }, 1500)
-//     }, 3000)
-//  },10000)
-// }
 function generatePassword () 
 {
 //prompting user for the length and keys desired for their password
@@ -41,42 +18,7 @@ let upperCase = window.confirm("Click OK if you want uppercase letters to be in 
 let lowerCase = window.confirm("Click OK if you want lowercase letters to be in your password. ")
 let number = window.confirm("Click OK if you want numbers to be in your password. ")
 }
-
+//parameters for user password length
 if (characterLength < 8 || characterLength > 128){
   window.alert("password length has to be between 8 and 128 characters");
 }
-// function generatePassword () {
-//   let selectOptions = getUserSelection()
-
-//   if (selectOptions === undefined){
-//     return
-//    }
-//  } 
-// function getUserSelection (){
-
-
-// let { length, lowercase, uppercase, specialCharacters, number } = selectOptions
-//   let possibleCharacters = [];
-//   let generatedPassword = "";
-
-// if (lowercase){
-//   possibleCharacters = possibleChracters.concat(lowerCase)
-// }
-// }
-//   if (uppercase) {
-//     possibleCharacters = possibleCharacters.concat(upperCase)
-// }
-
-//   if (specialCharacters) {
-//     possibleCharacters = possibleCharacters.concat(specialChar)
-// }
-
-//   if (number) {
-//     possibleCharacters = possibleCharacters.concat(number)
-// }
-
-// for (i = 0; i < length + 1; i++) {
-//   let randomCharIndex = Math.floor(Math.random() * possibleCharacters.length)
-//   generatedPassword += possibleCharacters[randomCharIndex]  
-
-//
