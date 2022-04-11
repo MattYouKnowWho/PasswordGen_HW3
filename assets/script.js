@@ -55,7 +55,10 @@ return generatedPassword
 }
 
 }
+
 generateBtn.addEventListener("click", function () {
   passwordVar = generatePassword();
+  const passwordEl = document.getElementById("password");
   document.getElementById("passwordVar");
+  passwordEl.textContent = passwordVar
 })
