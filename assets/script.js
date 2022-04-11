@@ -40,7 +40,7 @@ if (!specialChar && !upperCase && !lowerCase && !numbers){
     }
     
       if (number) {
-        choices = choices.concat(number)
+        choices = choices.concat(numbers)
     }
     
 
