@@ -11,7 +11,10 @@ let choices = []
 
 
 
-function generatePassword() {
+function generatePassword () {
+  generatedPassword = "";
+  choices = [];
+  characterLength = undefined;
   //parameters for user password length
 characterLength = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
 if (!characterLength){
@@ -30,19 +33,19 @@ if (!specialChar && !upperCase && !lowerCase && !numbers){
   alert("You must select at least one character type!");
   return generatePassword();
 }
-  if (lowerCaseArr){
+  if (lowerCase){
       choices = choices.concat(lowerCaseArr)
     }
     
-      if (upperCaseArr) {
+      if (upperCase) {
         choices = choices.concat(upperCaseArr)
     }
     
-      if (specialCharArr) {
+      if (specialChar) {
         choices = choices.concat(specialCharArr)
     }
     
-      if (numbersArr) {
+      if (numbers) {
         choices = choices.concat(numbersArr)
     }
     
