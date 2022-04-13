@@ -11,14 +11,15 @@ let choices = []
 
 
 
-function generatePassword () {
+function generatePassword() {
   //parameters for user password length
 characterLength = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
 if (!characterLength){
   alert("This needs a value. ");
 
 } else if (characterLength < 8 || characterLength > 128){
-  characterLength = parseInt(prompt("You must choose between 8 and 128"));
+  alert("You must put value between 8 and 128!");
+  return generatePassword();
 } else {
 const specialChar = window.confirm("Click OK if you want to have special characters in your password. ");
 const upperCase = window.confirm("Click OK if you want uppercase letters to be in your password. ");
@@ -26,6 +27,8 @@ const lowerCase = window.confirm("Click OK if you want lowercase letters to be i
 const numbers = window.confirm("Click OK if you want numbers to be in your password. ");
 //scenarios in which user doesnt click OK
 if (!specialChar && !upperCase && !lowerCase && !numbers){
+  alert("You must select at least one character type!");
+  return generatePassword();
 }
   if (lowerCaseArr){
       choices = choices.concat(lowerCaseArr)
